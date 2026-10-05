@@ -1,0 +1,3 @@
+FROM lil-kk-qwen38:arm64-sm121-beta20261003
+# b12x compiles its io_uring PLE disk loader at runtime; it needs the headers + pkg-config.
+RUN apt-get update && apt-get install -y --no-install-recommends liburing-dev pkg-config && rm -rf /var/lib/apt/lists/*
